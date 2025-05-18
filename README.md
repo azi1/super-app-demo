@@ -13,7 +13,12 @@ In addition to module federation, the project highlights:
 The codebase follows a monorepo structure using Yarn Workspaces, and the 2FA mini app is compiled and bundled separately. The 2FA token generation feature is implemented entirely on-device, using device-specific identifiers from native code and a demo TOTP algorithm. No backend services are involved.
 ## Super App Demo Video
 
-![Super App Demo](assets/super-app-demo.gif)
+<img
+  src="assets/super-app-demo.gif"
+  alt="Super App Demo"
+  width="400"
+  height="400"
+/>
 
 
 ## Feature Summary
