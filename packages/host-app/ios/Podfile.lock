@@ -5,6 +5,8 @@ PODS:
     - React-Core
     - SwiftyRSA (~> 1.7)
   - CocoaAsyncSocket (7.6.5)
+  - DeviceIdentifier (0.1.0):
+    - React-Core
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.72.17)
   - FBReactNativeSpec (0.72.17):
@@ -492,6 +494,8 @@ PODS:
     - React-jsi (= 0.72.17)
     - React-logger (= 0.72.17)
     - React-perflogger (= 0.72.17)
+  - RNCAsyncStorage (2.1.2):
+    - React-Core
   - RNScreens (3.37.0):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
@@ -507,6 +511,7 @@ PODS:
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
   - "callstack-repack (from `../node_modules/@callstack/repack`)"
+  - DeviceIdentifier (from `../../2fa-mini-app`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
@@ -569,6 +574,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -596,6 +602,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
   callstack-repack:
     :path: "../node_modules/@callstack/repack"
+  DeviceIdentifier:
+    :path: "../../2fa-mini-app"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -672,6 +680,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   Yoga:
@@ -681,6 +691,7 @@ SPEC CHECKSUMS:
   boost: 7dcd2de282d72e344012f7d6564d024930a6a440
   callstack-repack: 16e28971e35be8e6b9f0c952467fcb17d4471e8e
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  DeviceIdentifier: 37c637b021ba4c6e5c8b338b04ff68c0f7bb68e9
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 66398fc2381d8fa1eee4c0f80d931587a7b927e8
   FBReactNativeSpec: 0f8cecf999d709dba7626bbf565b1b5f8f46a5c1
@@ -731,12 +742,13 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 5cd71d2becb07952525bd137963ca5cb98597bc0
   React-utils: 389181b1411d047f3d9c4913930b9e806d59d0b1
   ReactCommon: 561cfc1683ccdebe8a377b4616958ea6a1f62d91
+  RNCAsyncStorage: b9f5f78da5d16a853fe3dc22e8268d932fc45a83
   RNScreens: 79a536c7aaabe1fd2314a53238ee5af366d70868
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
   Yoga: ef534101bb891fb09bae657417f34d399c1efe38
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 2478fc44a2f4184a951808df3461230578f192fa
+PODFILE CHECKSUM: d52fbc0ad0c6e1bfa52f3124586060512aefc9bd
 
 COCOAPODS: 1.16.2

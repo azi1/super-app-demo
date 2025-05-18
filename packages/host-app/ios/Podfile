@@ -45,6 +45,10 @@ target 'HostApp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+    # ─── Add your DeviceIdentifier pod here ───────────────────
+    pod 'DeviceIdentifier', :path => '../../2fa-mini-app'
+    # ────────────────────────────────────────────────────────────
+
   target 'HostAppTests' do
     inherit! :complete
     # Pods for testing
