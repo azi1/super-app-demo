@@ -17,7 +17,7 @@ The codebase follows a monorepo structure using Yarn Workspaces, and the 2FA min
   src="assets/super-app-demo.gif"
   alt="Super App Demo"
   width="400"
-  height="400"
+  height="600"
 />
 
 
