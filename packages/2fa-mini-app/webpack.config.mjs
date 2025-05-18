@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';  
 import TerserPlugin from 'terser-webpack-plugin';
 import * as Repack from '@callstack/repack';
 
@@ -222,6 +223,10 @@ export default env => {
        * need more control, you can replace `Repack.RepackPlugin` with plugins
        * from `Repack.plugins`.
        */
+      new webpack.DefinePlugin({
+        isStandAlone: JSON.stringify(STANDALONE),
+      }),
+      
       new Repack.RepackPlugin({
         context,
         mode,
@@ -237,6 +242,8 @@ export default env => {
         name: 'MiniApp',
         exposes: {
           './MiniAppNavigator': './src/navigation/MainNavigator',
+          './DeviceIdentifier': './src/native/DeviceIdentifier',
+          './GenerateToken':     './src/utils/GenerateToken',
         },
         shared: {
           react: {
@@ -268,6 +275,11 @@ export default env => {
             singleton: true,
             eager: STANDALONE,
             requiredVersion: '3.20.0',
+          },
+          '@react-native-async-storage/async-storage': {
+            singleton: true,
+            eager: STANDALONE,
+            requiredVersion: '2.1.2',
           },
         },
       }),

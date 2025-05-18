@@ -6,18 +6,18 @@
   "private": true,
   "workspaces": [
     "packages/host-app",
-    "packages/mini-app"
+    "packages/2fa-mini-app"
   ],
   "packageManager": "yarn@3.4.1",
   "scripts": {
     "bootstrap": "yarn && yarn workspaces foreach run bootstrap",
     "start": "concurrently -P 'yarn:start:*(!standalone) {1}'",
-    "start:host-app": "yarn workspace HostApp run start",
-    "start:mini-app": "yarn workspace MiniApp run start",
-    "run:host-app:ios": "yarn workspace HostApp run ios",
-    "run:host-app:android": "yarn workspace HostApp run android",
-    "run:mini-app:ios": "yarn workspace MiniApp run ios",
-    "run:mini-app:android": "yarn workspace MiniApp run android"
+    "start:host-app": "yarn workspace host-app run start",
+    "start:mini-app": "yarn workspace 2fa-mini-app run start",
+    "run:host-app:ios": "yarn workspace host-app run ios",
+    "run:host-app:android": "yarn workspace host-app run android",
+    "run:mini-app:ios": "yarn workspace 2fa-mini-app run ios",
+    "run:mini-app:android": "yarn workspace 2fa-mini-app run android"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"

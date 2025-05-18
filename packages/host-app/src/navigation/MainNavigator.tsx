@@ -6,12 +6,12 @@ import {
 } from '@react-navigation/native-stack';
 
 import HomeScreen from '../screens/HomeScreen';
-import DetailScreen from '../screens/DetailScreen';
 import MiniAppScreen from '../screens/MiniAppScreen';
+import View2FAScreen from '../screens/View2FAScreen';
 
 export type MainStackParamList = {
   Home: undefined;
-  Detail: undefined;
+  View2FAScreen: undefined;
   MiniApp: undefined;
 };
 
@@ -31,8 +31,12 @@ const MainNavigator = () => {
         headerTintColor: 'rgba(255,255,255,1)',
       }}>
       <Main.Screen name="Home" component={HomeScreen} />
-      <Main.Screen name="Detail" component={DetailScreen} />
-      <Main.Screen name="MiniApp" component={MiniAppScreen} options={{headerShown: false}} />
+      <Main.Screen name="View2FAScreen" component={View2FAScreen} />
+      <Main.Screen
+        name="MiniApp"
+        component={MiniAppScreen}
+        options={{headerShown: false}}
+      />
     </Main.Navigator>
   );
 };

@@ -492,6 +492,8 @@ PODS:
     - React-jsi (= 0.72.17)
     - React-logger (= 0.72.17)
     - React-perflogger (= 0.72.17)
+  - RNCAsyncStorage (2.1.2):
+    - React-Core
   - RNScreens (3.37.0):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
@@ -569,6 +571,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -672,6 +675,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   Yoga:
@@ -731,6 +736,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 5cd71d2becb07952525bd137963ca5cb98597bc0
   React-utils: 389181b1411d047f3d9c4913930b9e806d59d0b1
   ReactCommon: 561cfc1683ccdebe8a377b4616958ea6a1f62d91
+  RNCAsyncStorage: b9f5f78da5d16a853fe3dc22e8268d932fc45a83
   RNScreens: 79a536c7aaabe1fd2314a53238ee5af366d70868
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
