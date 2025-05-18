@@ -80,14 +80,29 @@ yarn run:host-app:android
 
 ## Key Demonstrations
 
-1. The host app dynamically loads mini apps using Re.Pack.
-2. The 2FA mini app has a UI to configure token settings (secret, issuer, interval).
-3. These configs are persisted using AsyncStorage.
-4. The native module in the mini app exposes device ID to JS via React Native bridging.
-5. The host app calls the mini app's `generateToken()` method, which uses the stored config and device ID to produce token.
+- The host app dynamically loads mini apps using Re.Pack.
+- The 2FA mini app has a UI to configure token settings (secret, issuer, interval).
+- These configs are persisted using AsyncStorage.
+- The native module in the mini app exposes device ID to JS via React Native bridging.
+- The host app calls the mini app's `generateToken()` method, which uses the stored config and device ID to produce token.
 
 ## App-level Documentation
 
 - [Host App](./packages/host-app/README.md)
 - [2FA Mini App](./packages/2fa-mini-app/README.md)
+
+
+## Areas for Improvement
+
+- Advanced Device Fingerprinting: Replace basic device information with a customizable fingerprinting mechanism to enhance security and resist spoofing.
+
+- Conditional Token Generation UI: Hide the "Refresh Token" button until the initial setup is completed, preventing premature interactions.
+
+- Android Native Support: Complete Android bridge.
+
+- Automated Token Refresh: Add a manual refresh control and enable automatic token regeneration based on the configured interval for seamless UX.
+
+- Upgrade to Re.Pack v5: Migrate the build setup to Re.Pack version 5 to benefit from the latest performance improvements and bug fixes.
+
+- Leverage Turbo Modules: Transition native modules to React Native Turbo Modules to improve startup speed and native-JS communication efficiency.
 
