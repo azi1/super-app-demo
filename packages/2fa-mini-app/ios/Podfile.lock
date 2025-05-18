@@ -1,7 +1,8 @@
 PODS:
   - boost (1.76.0)
-  - callstack-repack (3.7.0):
+  - callstack-repack (4.4.1):
     - JWTDecode (~> 3.0.0)
+    - RCT-Folly (= 2021.07.22.00)
     - React-Core
     - SwiftyRSA (~> 1.7)
   - CocoaAsyncSocket (7.6.5)
@@ -684,7 +685,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 7dcd2de282d72e344012f7d6564d024930a6a440
-  callstack-repack: 16e28971e35be8e6b9f0c952467fcb17d4471e8e
+  callstack-repack: 262ef29a149606290dea2d76b5faf8d9f97fa6e2
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 66398fc2381d8fa1eee4c0f80d931587a7b927e8
