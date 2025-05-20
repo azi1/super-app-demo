@@ -2,8 +2,22 @@ import path from 'path';
 import webpack from 'webpack';  
 import TerserPlugin from 'terser-webpack-plugin';
 import * as Repack from '@callstack/repack';
+import pkg from './package.json' assert { type: 'json' };
 
 const STANDALONE = Boolean(process.env.STANDALONE);
+
+
+
+// build a shared-config entry for each dependency
+const EXCLUDED = new Set(['js-sha1']);
+const sharedDeps = Object.fromEntries(
+  Object.entries(pkg.dependencies || {})
+    .filter(([name]) => !EXCLUDED.has(name))
+    .map(([name, version]) => [
+      name,
+      { singleton: true, eager: STANDALONE, requiredVersion: version },
+    ])
+);
 export default env => {
   const {
     mode = 'development',
@@ -164,41 +178,7 @@ export default env => {
           './GenerateToken':     './src/utils/GenerateToken',
         },
         shared: {
-          react: {
-            singleton: true,
-            eager: STANDALONE,
-            requiredVersion: '18.2.0',
-          },
-          'react-native': {
-            singleton: true,
-            eager: STANDALONE,
-            requiredVersion: '0.72.3',
-          },
-          '@react-navigation/native': {
-            singleton: true,
-            eager: STANDALONE,
-            requiredVersion: '6.1.6',
-          },
-          '@react-navigation/native-stack': {
-            singleton: true,
-            eager: STANDALONE,
-            requiredVersion: '6.9.12',
-          },
-          'react-native-safe-area-context': {
-            singleton: true,
-            eager: STANDALONE,
-            requiredVersion: '4.5.0',
-          },
-          'react-native-screens': {
-            singleton: true,
-            eager: STANDALONE,
-            requiredVersion: '3.20.0',
-          },
-          '@react-native-async-storage/async-storage': {
-            singleton: true,
-            eager: STANDALONE,
-            requiredVersion: '2.1.2',
-          },
+         ...sharedDeps,
         },
       }),
     ],

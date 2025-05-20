@@ -1,6 +1,21 @@
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import * as Repack from '@callstack/repack';
+import pkg from './package.json' assert { type: 'json' };
+
+
+
+// build a shared-config entry for each dependency
+const sharedDeps = Object.fromEntries(
+  Object.entries(pkg.dependencies || {}).map(([name, version]) => [
+    name,
+    {
+      singleton: true,
+      eager: true,
+      requiredVersion: version,
+    },
+  ])
+);
 
 export default env => {
   const {
@@ -124,41 +139,7 @@ export default env => {
       new Repack.plugins.ModuleFederationPlugin({
         name: 'HostApp',
         shared: {
-          react: {
-            singleton: true,
-            eager: true,
-            requiredVersion: '18.2.0',
-          },
-          'react-native': {
-            singleton: true,
-            eager: true,
-            requiredVersion: '0.72.3',
-          },
-          '@react-navigation/native': {
-            singleton: true,
-            eager: true,
-            requiredVersion: '6.1.6',
-          },
-          '@react-navigation/native-stack': {
-            singleton: true,
-            eager: true,
-            requiredVersion: '6.9.12',
-          },
-          'react-native-safe-area-context': {
-            singleton: true,
-            eager: true,
-            requiredVersion: '4.5.0',
-          },
-          'react-native-screens': {
-            singleton: true,
-            eager: true,
-            requiredVersion: '3.20.0',
-          },
-          '@react-native-async-storage/async-storage': {
-            singleton: true,
-            eager: true,
-            requiredVersion: '2.1.2',
-          },
+          ...sharedDeps,
         },
       }),
     ],

@@ -17,7 +17,8 @@
     "run:host-app:ios": "yarn workspace host-app run ios",
     "run:host-app:android": "yarn workspace host-app run android",
     "run:mini-app:ios": "yarn workspace 2fa-mini-app run ios",
-    "run:mini-app:android": "yarn workspace 2fa-mini-app run android"
+    "run:mini-app:android": "yarn workspace 2fa-mini-app run android",
+    "run:mini-app:standalone": "yarn workspace 2fa-mini-app start:standalone"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"
